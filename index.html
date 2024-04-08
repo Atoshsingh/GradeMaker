@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: lightblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        Name : <input type="text" id="name" placeholder="Enter Your Name " /><br>
+        Roll No : <input type="number" id="roll" placeholder="Enter Your Roll No. " /><br>
+        Marks : <input type="number" id="mark" placeholder="Enter Your Marks Out Of 100 " /><br>
+        <button onclick="prin()" style="margin-left:50px">Print Grade</button>
+    </div>
+    <div id="mydiv"></div>
+
+    <script>
+        function prin() {
+            //alert("Calculating your marks ");
+            var name = document.getElementById("name").value;
+            var roll = document.getElementById("roll").value;
+            var mark = document.getElementById("mark").value;
+            var gd;
+
+            //document.getElementById("mydiv").innerHTML="Hello "; 
+            // document.getElementById("mydiv").innerHTML=`${name} ${roll} ${marks}`; 
+            if (mark >= 90) {
+                gd = "superbb.. "
+            }
+            else if (mark >= 70 && mark <= 89) {
+                gd = "A"
+            }
+            else if (mark >= 50 && mark < 69) {
+                gd = "B"
+            }
+            else if (mark >= 20 && mark <= 49) {
+                gd = "C"
+            }
+            else {
+                gd = "Fail"
+            }
+
+            //document.getElementById("mydiv").innerHTML="Helladsaaaaaao "; 
+
+            let i = document.createElement("table");
+            i.setAttribute("border", "1");
+
+            var a = document.createElement("tr");
+            var a_1 = document.createElement("td");
+            a_1.innerText = "Name ";
+            var a_2 = document.createElement("td");
+            a_2.innerText = name;
+            a.appendChild(a_1);
+            a.appendChild(a_2);
+
+            //document.getElementById("mydiv").innerHTML="Heldasdaslo "; 
+
+            var b = document.createElement("tr");
+            var b_1 = document.createElement("td");
+            b_1.innerText = "Roll No";
+            var b_2 = document.createElement("td");
+            b_2.innerText = roll;
+            b.appendChild(b_1);
+            b.appendChild(b_2);
+
+            //document.getElementById("mydiv").innerHTML="Helzxczxclo "; 
+
+            var c = document.createElement("tr");
+            var c_1 = document.createElement("td");
+            c_1.innerText = "Grade";
+            var c_2 = document.createElement("td");
+            c_2.innerText = gd;
+            c.appendChild(c_1);
+            c.appendChild(c_2);
+
+            i.appendChild(a);
+            i.appendChild(b);
+            i.appendChild(c);
+            // document.body.appendChild(table);
+            //document.getElementById("mydiv").appendChild(i);
+            document.body.append(i);
+
+
+
+
+        }
+    </script>
+</body>
+
+</html>
